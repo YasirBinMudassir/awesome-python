@@ -18,12 +18,12 @@ concurrency:
 jobs:
   deploy:
     if: github.repository == 'vinta/awesome-python'
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-8vcpu-ubuntu-2204-arm
     environment:
       name: github-pages
       url: https://awesome-python.com/
     steps:
-      - uses: actions/checkout@v7
+      - uses: useblacksmith/checkout@v1
         with:
           # build.py reads each page's last change from git history for the sitemap's lastmod
           fetch-depth: 0
